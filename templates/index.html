@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Handwritten Text Recognition using Deep Learning</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="main-container">
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="logo">
+
+<i class="fa-solid fa-brain"></i>
+
+</div>
+
+<div>
+
+<h1>
+
+Handwritten Text Recognition using Deep Learning
+
+</h1>
+
+<p>
+
+Microsoft TrOCR • Flask • PyTorch • OpenCV
+
+</p>
+
+</div>
+
+</header>
+
+<!-- ================= DASHBOARD ================= -->
+
+<div class="dashboard">
+
+<!-- LEFT SIDE -->
+
+<div class="glass-card">
+
+<h2>
+
+<i class="fa-solid fa-cloud-arrow-up"></i>
+
+Upload Image
+
+</h2>
+
+<label class="upload-box">
+
+<input
+type="file"
+id="imageInput"
+accept="image/*">
+
+<i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+
+<h3>
+
+Choose Image
+
+</h3>
+
+<p>
+
+PNG • JPG • JPEG
+
+</p>
+
+</label>
+
+<div class="button-row">
+
+<button id="recognizeBtn">
+
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+
+Recognize
+
+</button>
+
+<button id="clearBtn">
+
+<i class="fa-solid fa-trash"></i>
+
+Clear
+
+</button>
+
+</div>
+
+<div id="loading">
+
+<div class="loader"></div>
+
+<span>
+
+AI is recognizing handwriting...
+
+</span>
+
+</div>
+
+</div>
+
+<!-- RIGHT SIDE -->
+
+<div class="glass-card">
+
+<h2>
+
+<i class="fa-solid fa-image"></i>
+
+Image Preview
+
+</h2>
+
+<img
+
+id="preview"
+
+src=""
+
+alt="Preview Image">
+
+<div class="status-card">
+
+<div class="status-left">
+
+<div class="status-icon">
+
+<i class="fa-solid fa-microchip"></i>
+
+</div>
+
+<div>
+
+<small>
+
+AI Model
+
+</small>
+
+<h3>
+
+Microsoft TrOCR
+
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="status-success">
+
+<i class="fa-solid fa-circle-check"></i>
+
+Ready for Recognition
+
+</div>
+
+</div>
+
+</div>
+<!-- ================= OCR RESULT ================= -->
+
+<div class="glass-card" style="margin-top:35px;">
+
+<h2>
+
+<i class="fa-solid fa-file-lines"></i>
+
+Recognized Text
+
+</h2>
+
+<textarea
+
+id="recognizedText"
+
+readonly
+
+placeholder="Recognized text will appear here...">
+
+</textarea>
+
+<br><br>
+
+<div class="status-card">
+
+<div class="status-left">
+
+<div class="status-icon">
+
+<i class="fa-solid fa-chart-line"></i>
+
+</div>
+
+<div style="width:100%;">
+
+<small>
+
+Recognition Confidence
+
+</small>
+
+<h3 id="confidence">
+
+High
+
+</h3>
+
+<div class="progress">
+
+<div
+id="progressBar"
+class="progress-bar">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="button-row">
+
+<button id="copyBtn">
+
+<i class="fa-solid fa-copy"></i>
+
+Copy Text
+
+</button>
+
+<button id="downloadBtn">
+
+<i class="fa-solid fa-download"></i>
+
+Download Text
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
